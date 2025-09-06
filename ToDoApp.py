@@ -8,7 +8,12 @@ def menu():
 
 menu()
 
-option = int(input("Please choose an option by entering its number:"))
+option = None
+while option is None:
+  try:
+    option = int(input("Please choose an option by entering its number:"))
+  except ValueError:
+    print("Invalid input. Please enter a number.")
 
 todo_string = []
 
@@ -60,6 +65,11 @@ while option != 4:
 
   print()
   menu()
-  option = int(input("Please choose an option by entering its number:"))
+  option = None
+  while option is None:
+    try:
+      option = int(input("Please choose an option by entering its number:"))
+    except ValueError:
+      print("Invalid input. Please enter a number.")
   
 print("You've quit the application.")
